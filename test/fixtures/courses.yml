@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  courseID: 1
+  name: JavaScript
+  roomNumber: Sturm
+  prefix: ICT
+  description: Hello
+
+two:
+  courseID: 2
+  name: Ruby
+  roomNumber: UCOL
+  prefix: ICT
+  description: Bye

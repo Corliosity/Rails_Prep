@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Firstname:</b>
+  <%= @student.firstName %>
+</p>
+
+<p>
+  <b>Lastname:</b>
+  <%= @student.lastName %>
+</p>
+
+<p>
+  <b>Studentid:</b>
+  <%= @student.studentID %>
+</p>
+
+<p>
+  <b>Schoolyear:</b>
+  <%= @student.schoolYear %>
+</p>
+
+<p>
+  <b>Birthday:</b>
+  <%= @student.birthday %>
+</p>
+
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>

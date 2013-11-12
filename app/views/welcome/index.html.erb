@@ -1,0 +1,15 @@
+<h1>Welcome to Course Registation</h1>
+
+<p id="notice"><%= notice %></p>
+
+<%= render :template => 'students/index' %>
+</br>
+</br>
+<b>Please look through for information on the following Courses</b>
+</br>
+<%= render :template => 'courses/index' %>
+
+| <%= link_to "Student Registration", controller: "students" %>  | <%= link_to "Course Registration", controller: "courses" %>
+</br>
+</br>
+<%= link_to "Logout", controller: "sessions", action: "destroy" %>

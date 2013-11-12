@@ -1,0 +1,36 @@
+<h1>Listing students</h1>
+<%= form_tag(search_students_url, method: "get") do %>
+  <%= label_tag(:q, "Search Students by First Name:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+<br/>
+<table>
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Studentid</th>
+    <th>Schoolyear</th>
+    <th>Birthday</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @students.each do |student| %>
+  <tr>
+    <td><%= student.firstName %></td>
+    <td><%= student.lastName %></td>
+    <td><%= student.studentID %></td>
+    <td><%= student.schoolYear %></td>
+    <td><%= student.birthday %></td>
+    <td><%= link_to 'Show', student %></td>
+    <td><%= link_to 'Edit', edit_student_path(student) %></td>
+    <td><%= link_to 'Destroy', student, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Student', new_student_path %>

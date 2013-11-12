@@ -1,0 +1,36 @@
+<h1>Listing courses</h1>
+<%= form_tag(search_courses_url, method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+<br/>
+<table>
+  <tr>
+    <th>Courseid</th>
+    <th>Name</th>
+    <th>Roomnumber</th>
+    <th>Prefix</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @courses.each do |course| %>
+  <tr>
+    <td><%= course.courseID %></td>
+    <td><%= course.name %></td>
+    <td><%= course.roomNumber %></td>
+    <td><%= course.prefix %></td>
+    <td><%= course.description %></td>
+    <td><%= link_to 'Show', course %></td>
+    <td><%= link_to 'Edit', edit_course_path(course) %></td>
+    <td><%= link_to 'Destroy', course, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Course', new_course_path %>

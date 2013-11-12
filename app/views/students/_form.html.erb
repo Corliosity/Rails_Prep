@@ -1,0 +1,41 @@
+<%= form_for(@student) do |f| %>
+  <% if @student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+      <% @student.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :firstName %><br />
+    <%= f.text_field :firstName %>
+  </div>
+  <div class="field">
+    <%= f.label :lastName %><br />
+    <%= f.text_field :lastName %>
+  </div>
+  <div class="field">
+    <%= f.label :studentID %><br />
+    <%= f.number_field :studentID %>
+  </div>
+  <div class="field">
+    <%= f.label :schoolYear %><br />
+    <%= f.text_field :schoolYear %>
+  </div>
+  <div class="field">
+    <%= f.label :birthday %><br />
+    <%= f.date_select :birthday, :start_year => Date.current.year - 12, :end_year => 1950 %>
+  </div>
+  <div class=“field”>
+    <%= f.label 'Courses' %><br />
+    <%= select_tag("student[course_ids][]", options_for_select(Course.all.collect { |p| [p.name, p.id] }, @student.courses.collect { |p| p.id }), {:multiple => true, :size => 5 }) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

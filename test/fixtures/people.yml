@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: andre
+  password_digest: MyString
+
+two:
+  name: andrew_corliss
+  password_digest: MyString

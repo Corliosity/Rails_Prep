@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  firstName: Andrew
+  lastName: Corliss
+  studentID: 1
+  schoolYear: Senior
+  birthday: 2013-11-02
+
+two:
+  firstName: Steve
+  lastName: Beaty
+  studentID: 2
+  schoolYear: Junior
+  birthday: 2013-11-02
